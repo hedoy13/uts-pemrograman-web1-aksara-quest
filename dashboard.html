@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beranda | Aksara Quest</title>
+<link rel="icon" href="assets/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="dashboard">
+<header class="atas">
+  <a class="merek" href="dashboard.html"><img src="assets/logo.svg" alt="">Aksara Quest</a>
+  <nav aria-label="Menu utama">
+    <a href="dashboard.html">Beranda</a>
+    <a href="stok.html">Katalog</a>
+    <a href="checkout.html#pesan">Pesanan</a>
+    <a href="tracking.html">Lacak</a>
+  </nav>
+  <div class="hud">
+    <span class="avatar" id="avatar" aria-hidden="true"></span>
+    <div class="hud-info"><strong id="namaUser"></strong><span id="levelUser"></span><div class="xp kecil" role="progressbar" aria-label="Pengalaman"><i id="xpBar"></i></div></div>
+    <span class="koin" id="koinUser" title="Total belanja dalam ribu rupiah">0</span>
+    <button type="button" id="keluar" class="btn garis mini">Keluar</button>
+  </div>
+</header>
+<main class="isi">
+  <section class="hub-kepala">
+    <p class="ket"><span class="fase" id="fase"></span><span id="tanggal"></span></p>
+    <h1 id="salam">Selamat datang</h1>
+    <p class="ket" id="ringkas"></p>
+  </section>
+  <div class="hub-grid">
+    <nav class="lokasi-grid" aria-label="Menu dashboard">
+      <a class="lokasi l1" href="stok.html"><span class="ikon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h12a3 3 0 013 3v15H7a3 3 0 01-3-3zm3 3v1.6h9V6z"/></svg></span><strong>Katalog &amp; Stok</strong><small>Perbendaharaan buku guild</small><span class="info" id="i1"></span></a>
+      <a class="lokasi l2" href="tracking.html"><span class="ikon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg></span><strong>Lacak Kiriman</strong><small>Pantau perjalanan kurir</small><span class="info" id="i2"></span></a>
+      <a class="lokasi l3" href="checkout.html#laporan"><span class="ikon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10h4v10zm6 0V4h4v16zm6 0v-7h4v7z"/></svg></span><strong>Laporan Pemesanan</strong><small>Statistik hasil perburuan</small><span class="info" id="i3"></span></a>
+      <a class="lokasi l4" href="checkout.html#riwayat"><span class="ikon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 5v5.4l3.8 2.3-.8 1.3L11 13V7z"/></svg></span><strong>Riwayat Transaksi</strong><small>Arsip semua pesanan</small><span class="info" id="i4"></span></a>
+    </nav>
+    <aside class="panel misi" aria-labelledby="jMisi">
+      <h2 id="jMisi">Misi petualangan</h2>
+      <p class="ket" id="misiTeks"></p>
+      <div class="xp" role="progressbar" aria-label="Kemajuan misi"><i id="misiBar"></i></div>
+      <ul id="daftarMisi"></ul>
+    </aside>
+  </div>
+</main>
+<footer class="kaki">Aksara Quest &ndash; proyek UTS Pemrograman Web 1. Kumpulkan buku, naikkan level.</footer>
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

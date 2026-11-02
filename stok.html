@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Katalog & Stok | Aksara Quest</title>
+<link rel="icon" href="assets/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="stok">
+<header class="atas">
+  <a class="merek" href="dashboard.html"><img src="assets/logo.svg" alt="">Aksara Quest</a>
+  <nav aria-label="Menu utama">
+    <a href="dashboard.html">Beranda</a>
+    <a href="stok.html">Katalog</a>
+    <a href="checkout.html#pesan">Pesanan</a>
+    <a href="tracking.html">Lacak</a>
+  </nav>
+  <div class="hud">
+    <span class="avatar" id="avatar" aria-hidden="true"></span>
+    <div class="hud-info"><strong id="namaUser"></strong><span id="levelUser"></span><div class="xp kecil" role="progressbar" aria-label="Pengalaman"><i id="xpBar"></i></div></div>
+    <span class="koin" id="koinUser" title="Total belanja dalam ribu rupiah">0</span>
+    <button type="button" id="keluar" class="btn garis mini">Keluar</button>
+  </div>
+</header>
+<main class="isi">
+  <h1>Katalog &amp; Stok</h1>
+  <p class="ket" id="ringkasStok"></p>
+  <section class="panel" aria-labelledby="jDaftarBuku" style="margin-top:1.2rem">
+    <div class="bilah-alat">
+      <h2 id="jDaftarBuku" style="margin:0">Inventori buku</h2>
+      <div><label for="cari" style="margin-top:0">Cari judul atau kode</label><input type="search" id="cari" placeholder="Contoh: manajemen"></div>
+    </div>
+    <div class="tabel-wrap">
+      <table>
+        <caption class="ket" style="text-align:left;padding-bottom:.5rem">Kelangkaan item mengikuti harga buku. Stok di bawah 200 eksemplar ditandai Menipis.</caption>
+        <thead><tr><th>Sampul</th><th>Kode</th><th>Judul</th><th>Jenis</th><th>Edisi</th><th>Stok</th><th>Harga</th><th>Aksi</th></tr></thead>
+        <tbody id="isiStok"></tbody>
+      </table>
+    </div>
+  </section>
+  <section class="panel" aria-labelledby="jTambah">
+    <h2 id="jTambah">Tambah baris stok</h2>
+    <form id="formStok" novalidate>
+      <div class="grid2">
+        <div><label for="kode">Kode barang</label><input id="kode" name="kode" placeholder="ASIP4301"><p class="galat" id="err-kode"></p></div>
+        <div><label for="nama">Judul buku</label><input id="nama" name="nama"><p class="galat" id="err-nama"></p></div>
+        <div><label for="jenis">Jenis</label><select id="jenis" name="jenis"><option>Buku Ajar</option><option>Modul</option><option>Buku Referensi</option></select><p class="galat" id="err-jenis"></p></div>
+        <div><label for="edisi">Edisi</label><input type="number" id="edisi" name="edisi" min="1" value="1"><p class="galat" id="err-edisi"></p></div>
+        <div><label for="stok">Stok (eksemplar)</label><input type="number" id="stok" name="stok" min="0"><p class="galat" id="err-stok"></p></div>
+        <div><label for="harga">Harga (Rp)</label><input type="number" id="harga" name="harga" min="1000" step="500"><p class="galat" id="err-harga"></p></div>
+      </div>
+      <div class="aksi"><button type="submit" class="btn">Tambah ke tabel</button></div>
+    </form>
+  </section>
+</main>
+<footer class="kaki">Aksara Quest &ndash; proyek UTS Pemrograman Web 1. Kumpulkan buku, naikkan level.</footer>
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

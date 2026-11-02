@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Masuk | Aksara Quest</title>
+<link rel="icon" href="assets/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="login" class="login">
+<header class="sisi">
+  <img class="logo-besar" src="assets/logo.svg" alt="Lambang guild Aksara Quest">
+  <h1>Aksara Quest</h1>
+  <p>Guild pemburu buku ajar. Kumpulkan item pengetahuan, kirim lewat kurir, dan naik level di setiap pesanan.</p>
+  <p class="kedip" aria-hidden="true">&#9654; Tekan Login untuk memulai petualangan</p>
+  <div class="rak-cover">
+    <img src="img/pengantar_komunikasi.jpg" alt="Sampul Pengantar Ilmu Komunikasi">
+    <img src="img/manajemen_keuangan.jpg" alt="Sampul Manajemen Keuangan">
+    <img src="img/kepemimpinan.jpg" alt="Sampul Kepemimpinan">
+    <img src="img/mikrobiologi.jpg" alt="Sampul Mikrobiologi Dasar">
+    <img src="img/paud_perkembangan.jpg" alt="Sampul Perkembangan Anak Usia Dini">
+  </div>
+</header>
+<main class="kartu-login panel">
+  <h2>Masuk ke petualangan</h2>
+  <form id="formLogin" novalidate>
+    <label for="email">Email</label>
+    <input type="email" id="email" autocomplete="username" placeholder="nama@gmail.com">
+    <p class="galat" id="err-email"></p>
+    <label for="password">Password</label>
+    <input type="password" id="password" autocomplete="current-password">
+    <p class="galat" id="err-password"></p>
+    <button type="submit" class="btn" style="width:100%">Login</button>
+  </form>
+  <div class="aksi">
+    <button type="button" class="btn garis" id="bukaLupa">Lupa Password</button>
+    <button type="button" class="btn kuning" id="bukaDaftar">Daftar</button>
+  </div>
+  <p class="ket" style="margin-top:1.2rem">Karakter contoh: amirarifda17@gmail.com / zaracantik123</p>
+</main>
+
+<dialog id="modalLupa" aria-labelledby="jLupa">
+  <h2 id="jLupa">Pulihkan akun</h2>
+  <p class="ket">Masukkan email akun Anda. Kami kirim petunjuk untuk mengatur ulang password.</p>
+  <form id="formLupa" novalidate>
+    <label for="lEmail">Email terdaftar</label>
+    <input type="email" id="lEmail">
+    <p class="galat" id="err-lEmail"></p>
+    <div class="aksi"><button type="submit" class="btn">Kirim petunjuk</button><button type="button" class="btn garis" data-tutup>Batal</button></div>
+  </form>
+</dialog>
+
+<dialog id="modalDaftar" aria-labelledby="jDaftar">
+  <h2 id="jDaftar">Buat karakter baru</h2>
+  <form id="formDaftar" novalidate>
+    <label for="dNama">Nama lengkap</label><input id="dNama" autocomplete="name"><p class="galat" id="err-dNama"></p>
+    <label for="dEmail">Email</label><input type="email" id="dEmail" autocomplete="email"><p class="galat" id="err-dEmail"></p>
+    <label for="dPass">Password (minimal 6 karakter)</label><input type="password" id="dPass" autocomplete="new-password"><p class="galat" id="err-dPass"></p>
+    <label for="dPass2">Ulangi password</label><input type="password" id="dPass2" autocomplete="new-password"><p class="galat" id="err-dPass2"></p>
+    <div class="aksi"><button type="submit" class="btn">Daftar</button><button type="button" class="btn garis" data-tutup>Batal</button></div>
+  </form>
+</dialog>
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pemesanan | Aksara Quest</title>
+<link rel="icon" href="assets/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="checkout">
+<header class="atas">
+  <a class="merek" href="dashboard.html"><img src="assets/logo.svg" alt="">Aksara Quest</a>
+  <nav aria-label="Menu utama">
+    <a href="dashboard.html">Beranda</a>
+    <a href="stok.html">Katalog</a>
+    <a href="checkout.html#pesan">Pesanan</a>
+    <a href="tracking.html">Lacak</a>
+  </nav>
+  <div class="hud">
+    <span class="avatar" id="avatar" aria-hidden="true"></span>
+    <div class="hud-info"><strong id="namaUser"></strong><span id="levelUser"></span><div class="xp kecil" role="progressbar" aria-label="Pengalaman"><i id="xpBar"></i></div></div>
+    <span class="koin" id="koinUser" title="Total belanja dalam ribu rupiah">0</span>
+    <button type="button" id="keluar" class="btn garis mini">Keluar</button>
+  </div>
+</header>
+<main class="isi">
+  <h1>Pemesanan</h1>
+  <nav class="tab-bar" aria-label="Bagian pemesanan">
+    <a class="tab" href="#pesan">Pesan buku</a>
+    <a class="tab" href="#laporan">Laporan</a>
+    <a class="tab" href="#riwayat">Riwayat</a>
+  </nav>
+
+  <div id="pesan" class="dua-kolom">
+    <div>
+      <section class="panel" aria-labelledby="jKeranjang">
+        <h2 id="jKeranjang">Buku yang dipesan (keranjang quest)</h2>
+        <div class="tabel-wrap"><table>
+          <thead><tr><th>Judul</th><th>Harga</th><th>Jumlah</th><th>Subtotal</th><th>Aksi</th></tr></thead>
+          <tbody id="isiKeranjang"></tbody>
+        </table></div>
+        <label for="pilihBuku">Tambah buku lain</label>
+        <div class="aksi" style="margin-top:0"><select id="pilihBuku" style="flex:1 1 220px;width:auto"></select><button type="button" class="btn kuning" id="tambahBuku">Tambah</button></div>
+      </section>
+      <section class="panel" aria-labelledby="jPemesan">
+        <h2 id="jPemesan">Data pemesan dan pembayaran</h2>
+        <form id="formPesan" novalidate>
+          <div class="grid2">
+            <div><label for="pNama">Nama pemesan</label><input id="pNama" autocomplete="name"><p class="galat" id="err-pNama"></p></div>
+            <div><label for="pEmail">Email</label><input type="email" id="pEmail" autocomplete="email"><p class="galat" id="err-pEmail"></p></div>
+            <div><label for="pTelp">Nomor telepon</label><input type="tel" id="pTelp" placeholder="08123456789" autocomplete="tel"><p class="galat" id="err-pTelp"></p></div>
+            <div><label for="pEkspedisi">Ekspedisi</label><select id="pEkspedisi"><option value="">Pilih ekspedisi</option><option>JNE</option><option>Pos Indonesia</option><option>J&amp;T</option><option>SiCepat</option></select><p class="galat" id="err-pEkspedisi"></p></div>
+          </div>
+          <label for="pAlamat">Alamat pengiriman</label>
+          <textarea id="pAlamat" rows="3" placeholder="Jalan, nomor, kota, kode pos"></textarea><p class="galat" id="err-pAlamat"></p>
+          <label for="pBayar">Metode pembayaran</label>
+          <select id="pBayar"><option value="">Pilih metode</option><option>Transfer Bank</option><option>E-Wallet</option><option>Kartu Kredit</option><option>Bayar di Tempat</option></select><p class="galat" id="err-pBayar"></p>
+          <div class="aksi"><button type="submit" class="btn">Buat pesanan</button></div>
+        </form>
+      </section>
+    </div>
+    <aside class="panel" aria-labelledby="jRingkas">
+      <h2 id="jRingkas">Ringkasan biaya</h2>
+      <div class="baris-total"><span>Subtotal</span><span id="vSub">Rp 0</span></div>
+      <div class="baris-total"><span>Ongkos kirim</span><span id="vOngkir">Rp 0</span></div>
+      <div class="baris-total besar"><span>Total</span><span id="vTotal">Rp 0</span></div>
+    </aside>
+  </div>
+
+  <section id="laporan" aria-labelledby="jLaporan" hidden>
+    <h2 id="jLaporan">Laporan pemesanan</h2>
+    <div class="stat">
+      <div class="panel"><span class="ket">Jumlah pesanan</span><strong id="statPesanan">0</strong></div>
+      <div class="panel"><span class="ket">Total pembayaran</span><strong id="statTotal">Rp 0</strong></div>
+      <div class="panel"><span class="ket">Rata-rata per pesanan</span><strong id="statRata">Rp 0</strong></div>
+    </div>
+    <div class="panel"><h3>Pesanan per ekspedisi</h3><ul class="daftar-bar" id="barEkspedisi"></ul></div>
+  </section>
+
+  <section id="riwayat" aria-labelledby="jRiwayat" hidden>
+    <h2 id="jRiwayat">Riwayat transaksi</h2>
+    <div class="panel tabel-wrap"><table>
+      <thead><tr><th>No. DO</th><th>Tanggal</th><th>Pemesan</th><th>Ekspedisi</th><th>Total</th><th>Status</th><th>Aksi</th></tr></thead>
+      <tbody id="isiRiwayat"></tbody>
+    </table></div>
+  </section>
+</main>
+<dialog id="modalSukses" aria-labelledby="jSukses">
+  <h2 id="jSukses">Quest diterima!</h2>
+  <p>Nomor Delivery Order Anda: <strong id="noDO"></strong></p>
+  <p>Total pembayaran: <strong id="totalSukses"></strong></p>
+  <div class="aksi"><a class="btn" id="linkLacak" href="tracking.html">Lacak pesanan</a><button type="button" class="btn garis" data-tutup>Tutup</button></div>
+</dialog>
+<footer class="kaki">Aksara Quest &ndash; proyek UTS Pemrograman Web 1. Kumpulkan buku, naikkan level.</footer>
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
