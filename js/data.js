@@ -22,7 +22,7 @@ var dataPengguna = [
     },
     {
         id: 4,
-        nama: "Amir Arifda",
+        nama: "Amira Rifda",
         email: "amirarifda17@gmail.com",
         password: "zaracantik123",
         role: "User",
